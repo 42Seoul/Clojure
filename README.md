@@ -206,7 +206,7 @@ nil?     :  인자가 nil이면 ture를 리턴하고 그 외의 경우 false
 (nil? "foo") ;=> false
 ```
 
-![함수 not, false?, nil? 이 true 를 리턴하는 경우 비교  ](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae1dd161-a84e-4d46-bd50-9c94e8c8dd61/Untitled.png)
+![함수 not, false?, nil? 이 true 를 리턴하는 경우 비교  ](./src/func_return_true.jpg)
 
 함수 not, false?, nil? 이 true 를 리턴하는 경우 비교  
 
