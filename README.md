@@ -4,7 +4,7 @@
 
 ### REPL(read-eval-print loop)
 
-평가하고 결과를 사용자에게 반환하는 컴퓨터 프로그래밍 환경이다. 
+평가하고 결과를 사용자에게 반환하는 컴퓨터 프로그래밍 환경이다.
 
 클로저는 clj 로 실행한다.
 
@@ -16,7 +16,7 @@
 (연산자 인수1 인수2)
 ```
 
-클로저에서는 함수나 연산자가 먼저 오고, 필요한 인수들이 뒤에온다.  
+클로저에서는 함수나 연산자가 먼저 오고, 필요한 인수들이 뒤에온다.
 
 ## 컬렉션
 
@@ -26,7 +26,7 @@
 
 순서가 있다.
 
-괄호 앞에 ‘를 붙여서 만든다. 
+괄호 앞에 ‘를 붙여서 만든다.
 
 문자열, 정수, 키워드 와 같은 여러 종류의 값을 혼합해서 넣을 수 있다.
 
@@ -50,7 +50,7 @@
 
 {:맵은 “중괄호로” :둘러싸서 “만든다”}
 
-get : 요소를 가저온다. keys : 키값들을 리스트로 반환한다. vals : 값들을 리스트로 반환한다. assoc : 맵에 새로운 키-값 쌍을 맵핑한다. dissoc: 해당 키-값 요소를 제거하고 남은 맵을 반환한다. 
+get : 요소를 가저온다. keys : 키값들을 리스트로 반환한다. vals : 값들을 리스트로 반환한다. assoc : 맵에 새로운 키-값 쌍을 맵핑한다. dissoc: 해당 키-값 요소를 제거하고 남은 맵을 반환한다.
 
 ```clojure
 (get {:맵은 “중괄호로” :둘러싸서 “만든다”} :맵은)
@@ -61,7 +61,7 @@ get : 요소를 가저온다. keys : 키값들을 리스트로 반환한다. val
 
 #{} 중괄호로 둘러싸서 만든다.
 
-유일한 값들이 존재, 중복 요소가 없다. 
+유일한 값들이 존재, 중복 요소가 없다.
 
 ```clojure
 #{:a :b :c :d}
@@ -71,31 +71,30 @@ get : 요소를 가저온다. keys : 키값들을 리스트로 반환한다. val
 ## 시퀀스 함수
 
 > 클로저에서 쉼표는 무시된다. 컬랙션에서 요소들을 구분할 때는 가급적 공백문자를 사용하자.
-> 
 
 ## 리스트는 클로저의 핵심이다.
 
-클로저의 기본 구조인 리스트는 LISP 언어의 본질에서 유래한다. 
+클로저의 기본 구조인 리스트는 LISP 언어의 본질에서 유래한다.
 
 ```clojure
 ‘(+ 11 11)
  ; => (+ 11 11)
-;식을 세개의 요소를 가진 리스트로 인식한다. 
+;식을 세개의 요소를 가진 리스트로 인식한다.
 ```
+
 ## 논리에 따른 흐름 제어
 
 ### 기본 논리
 
-논리적으로 참 : true 
+논리적으로 참 : true
 
-논리적으로 거짓 : false, ***nil***
+논리적으로 거짓 : false, **_nil_**
 
 ### 논리제어 기본 함수
 
-> *함수의 결과가 불린일 땐 함수의 이름 뒤에 ?를 붙이는 것이 관용적이다.*
-> 
+> _함수의 결과가 불린일 땐 함수의 이름 뒤에 ?를 붙이는 것이 관용적이다._
 
-true? : 인자가 true 이면 true 
+true? : 인자가 true 이면 true
 
 false? : 인자가 false 이면 false
 
@@ -106,8 +105,7 @@ not : Boolean 의 반대값을 반환
 
 not= : 일치하지않는지를 검사하다.
 
-> *nil은 논리적으로 거짓이다.*
-> 
+> _nil은 논리적으로 거짓이다._
 
 클로저 코드를 제어하는 법을 알아볼 것이다.
 
@@ -115,27 +113,27 @@ not= : 일치하지않는지를 검사하다.
 
 ## 일반 논리연산
 
-true?  : true 값인지 검사한다.
+true? : true 값인지 검사한다.
 
 false? : 인자가 false 값이면 true를 리턴하고 그 외의 경우 false
 
 ```clojure
-(false? false) ;=> **true** 
+(false? false) ;=> **true**
 (false? true) ;=> false
-(false? nil) ;=> false 
+(false? nil) ;=> false
 (false? "foo") ;=> false
 ```
 
-not     :  인자가 논리적으로 false 라면 true를 리턴하고 그 외의 경우 false 
+not : 인자가 논리적으로 false 라면 true를 리턴하고 그 외의 경우 false
 
 ```clojure
 (not false) ;=> **true**
 (not true) ;=> false
-(not nil) ;=> **true** 
+(not nil) ;=> **true**
 (not "foo") ;=> false
 ```
 
-nil?     :  인자가 nil이면 ture를 리턴하고 그 외의 경우 false
+nil? : 인자가 nil이면 ture를 리턴하고 그 외의 경우 false
 
 ```clojure
 (nil? false) ;=> false
@@ -148,16 +146,15 @@ nil?     :  인자가 nil이면 ture를 리턴하고 그 외의 경우 false
 
 ### 기본 논리
 
-논리적으로 참 : true 
+논리적으로 참 : true
 
-논리적으로 거짓 : false, ***nil***
+논리적으로 거짓 : false, **_nil_**
 
 ### 논리제어 기본 함수
 
-> *함수의 결과가 불린일 땐 함수의 이름 뒤에 ?를 붙이는 것이 관용적이다.*
-> 
+> _함수의 결과가 불린일 땐 함수의 이름 뒤에 ?를 붙이는 것이 관용적이다._
 
-true? : 인자가 true 이면 true 
+true? : 인자가 true 이면 true
 
 false? : 인자가 false 이면 false
 
@@ -168,8 +165,7 @@ not : Boolean 의 반대값을 반환
 
 not= : 일치하지않는지를 검사하다.
 
-> *nil은 논리적으로 거짓이다.*
-> 
+> _nil은 논리적으로 거짓이다._
 
 클로저 코드를 제어하는 법을 알아볼 것이다.
 
@@ -177,27 +173,27 @@ not= : 일치하지않는지를 검사하다.
 
 ## 일반 논리연산
 
-true?  : true 값인지 검사한다.
+true? : true 값인지 검사한다.
 
 false? : 인자가 false 값이면 true를 리턴하고 그 외의 경우 false
 
 ```clojure
-(false? false) ;=> **true** 
+(false? false) ;=> **true**
 (false? true) ;=> false
-(false? nil) ;=> false 
+(false? nil) ;=> false
 (false? "foo") ;=> false
 ```
 
-not     :  인자가 논리적으로 false 라면 true를 리턴하고 그 외의 경우 false 
+not : 인자가 논리적으로 false 라면 true를 리턴하고 그 외의 경우 false
 
 ```clojure
 (not false) ;=> **true**
 (not true) ;=> false
-(not nil) ;=> **true** 
+(not nil) ;=> **true**
 (not "foo") ;=> false
 ```
 
-nil?     :  인자가 nil이면 ture를 리턴하고 그 외의 경우 false
+nil? : 인자가 nil이면 ture를 리턴하고 그 외의 경우 false
 
 ```clojure
 (nil? false) ;=> false
@@ -208,7 +204,7 @@ nil?     :  인자가 nil이면 ture를 리턴하고 그 외의 경우 false
 
 ![함수 not, false?, nil? 이 true 를 리턴하는 경우 비교  ](./src/func_return_true.jpg)
 
-함수 not, false?, nil? 이 true 를 리턴하는 경우 비교  
+함수 not, false?, nil? 이 true 를 리턴하는 경우 비교
 
 ## 비교
 
@@ -223,7 +219,6 @@ empty? 컬렉션이 비었는지 확인할 수 있다. 비었으면 true 요소 
 seq 컬렉션을 시퀀스로 바꿔준다. 컬렉션을 리스트처럼 순차적으로 다룰 수 있게 해준다. (first rest cons 함수를 공유한다. ) 빈 컬렉션이면 nil 반환
 
 > 벡터인데 어떻게 first 되지? 에 대한 답변 제공
-> 
 
 비어있지 않음을 검사하기 위해 사용됨.
 
@@ -248,9 +243,8 @@ cf) 집합도 함수의 존재 여부 확인에 활용 가능
 논리적 거짓이 존재하는지 some 을이용해버리면 nil - false 가리턴 되니 조심
 
 > 대신 어떤것을 사용해야할까? nil? false?
-> 
 
-some false? 사용하거나 
+some false? 사용하거나
 
 ### 흐름제어 이용하기.
 
@@ -282,7 +276,7 @@ case 마지막은
 
 #4. 데이터 조작 함수)
 
-함수 not, false?, nil? 이 true 를 리턴하는 경우 비교  
+함수 not, false?, nil? 이 true 를 리턴하는 경우 비교
 
 ## 비교
 
@@ -297,7 +291,6 @@ empty? 컬렉션이 비었는지 확인할 수 있다. 비었으면 true 요소 
 seq 컬렉션을 시퀀스로 바꿔준다. 컬렉션을 리스트처럼 순차적으로 다룰 수 있게 해준다. (first rest cons 함수를 공유한다. ) 빈 컬렉션이면 nil 반환
 
 > 벡터인데 어떻게 first 되지? 에 대한 답변 제공
-> 
 
 비어있지 않음을 검사하기 위해 사용됨.
 
@@ -322,9 +315,8 @@ cf) 집합도 함수의 존재 여부 확인에 활용 가능
 논리적 거짓이 존재하는지 some 을이용해버리면 nil - false 가리턴 되니 조심
 
 > 대신 어떤것을 사용해야할까? nil? false?
-> 
 
-some false? 사용하거나 
+some false? 사용하거나
 
 ### 흐름제어 이용하기.
 
